@@ -18,7 +18,7 @@ byte ws, bat;
 
 void setup() {
 Wire.begin(ADD);
-Wire.onRequest(requestevent);
+Wire.onRequest(requestEvent);
 
 pinMode(WSPIN,INPUT_PULLUP);
 attachInterrupt(digitalPinToInterrupt(WSPIN), ISR_FUNC, RISING);
