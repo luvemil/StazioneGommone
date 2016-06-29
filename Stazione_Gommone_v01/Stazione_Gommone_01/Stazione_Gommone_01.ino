@@ -1,3 +1,5 @@
+#include <Wire.h>
+
 /*
 ##########################################################
 STAZIONE GOMMONE METIS VELA UNIPD
@@ -8,8 +10,8 @@ Dott. Marco Tarantino
 ##########################################################
 */
 
-#include<Wire.h>
-#define WSPIN 2;
+
+#define WSPIN 2
 #define ADD 0x25
 byte data[4];
 
@@ -34,11 +36,11 @@ void loop() {
 }
 
 void requestEvent(){
-  Wire.write(data,4)
+  Wire.write(data,4);
   ws=0;
 }
 
-void ISR_FUNC{
+void ISR_FUNC(){
   ++ws;
 }
 
