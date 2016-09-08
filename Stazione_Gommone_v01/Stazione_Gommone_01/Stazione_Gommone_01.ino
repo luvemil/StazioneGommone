@@ -6,7 +6,7 @@ STAZIONE GOMMONE METIS VELA UNIPD
 ##########################################################
       Andrea     Mastrangelo
 Dott. Marco Tarantino
-      Stefano    Pieretti
+      Stefano    Pieretti 
 ##########################################################
 */
 
@@ -27,14 +27,14 @@ Wire.onRequest(requestEvent);
 
 pinMode(WSPIN,INPUT_PULLUP);
 pinMode(LEDPIN,OUTPUT);
-attachInterrupt(digitalPinToInterrupt(WSPIN), ISR_FUNC, FALLING);
+attachInterrupt(digitalPinToInterrupt(WSPIN), ISR_FUNC, RISING);
   digitalWrite(LEDPIN,HIGH);
   delay(1000);
   digitalWrite(LEDPIN,LOW);
 
 }
 void loop() {
-  wd = analogRead(A0);
+  wd = pulseIn(A0,HIGH,5000);
   //Serial.println(wd);
   //bat= analogRead(A1);
   data[0]=wd; //LSB wd
